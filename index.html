@@ -127,6 +127,21 @@
     0 0 25px #ffd166,
     0 0 50px rgba(255, 209, 102, 0.7);
   border-color: #ffffff;
+
+  .alucard-card {
+  border: 1px solid #ff4d4d;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.5);
+  transition: 0.3s ease;
+}
+
+.alucard-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow:
+    0 0 10px #ff4d4d,
+    0 0 25px #ff4d4d,
+    0 0 50px rgba(255, 77, 77, 0.7);
+  border-color: #ffffff;
+}
 }
     /* GRID */
     .grid {
@@ -262,10 +277,22 @@
 
     </div>
 
-    <div class="card">
-      <span class="tag">Fighter</span>
-      <h3>Alucard</h3>
-      <p>Lifesteal fighter strong in 1v1 fights.</p>
+    <div class="card alucard-card">
+
+  <span class="tag">Fighter / Assassin</span>
+
+  <div style="overflow:hidden; border-radius:12px;">
+    <img src="alucard.jpg" alt="Alucard"
+      style="width:100%; display:block;">
+  </div>
+
+  <h3>Alucard</h3>
+  <p>Lifesteal fighter strong in 1v1 fights and snowballing early kills.</p>
+
+  <a class="btn" href="alucard.html" style="margin-top:10px;">
+    View Full Guide →
+  </a>
+
     </div>
 
     <div class="card">
