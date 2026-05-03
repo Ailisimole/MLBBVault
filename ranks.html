@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MLBBVault Ranks</title>
+  <title>Rank System - MLBBVault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -10,78 +10,122 @@
       font-family: Arial, sans-serif;
       background: #0a0a0f;
       color: #eaeaea;
-      padding: 20px;
     }
 
-    h1 {
+    /* HEADER */
+    .header {
       text-align: center;
-      margin-bottom: 20px;
+      padding: 50px 20px;
+      background: linear-gradient(180deg, #141428, #0a0a0f);
+    }
+
+    /* SECTION */
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      text-align: center;
     }
 
     /* BACK BUTTON */
-    .back {
+    .btn {
       display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 14px;
+      padding: 10px 16px;
       background: #6c5ce7;
       color: white;
-      text-decoration: none;
       border-radius: 10px;
-      transition: 0.3s;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 14px;
     }
 
-    .back:hover {
+    .btn:hover {
       background: #7b6df0;
-      transform: scale(1.05);
     }
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    @media(max-width:600px){
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    /* RANK CARDS */
+    /* CARD */
     .card {
       background: #151522;
       padding: 18px;
       border-radius: 14px;
+      margin-bottom: 15px;
       border: 1px solid #222;
-      cursor: pointer;
-      transition: 0.3s;
       text-align: center;
+      transition: 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow: 0 0 18px rgba(108,92,231,0.4);
+      transform: translateY(-4px);
+      border-color: #444;
     }
 
-    /* DETAIL BOX */
-    .detail {
-      display: none;
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 14px;
-      background: #111122;
-      border: 1px solid #333;
-      animation: fade 0.3s ease;
+    /* RANK ICON */
+    .rank-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+      margin-bottom: 10px;
     }
 
-    @keyframes fade {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #222;
+      color: #aaa;
+      margin-bottom: 8px;
     }
 
-    /* MYTHIC GLOW */
-    .glow {
-      color: #c084fc;
-      text-shadow: 0 0 10px #c084fc, 0 0 20px #a855f7;
+    /* GLOW ANIMATIONS */
+    @keyframes glowPurple {
+      0% { box-shadow: 0 0 10px rgba(168,140,255,0.3); }
+      50% { box-shadow: 0 0 30px rgba(168,140,255,0.8); }
+      100% { box-shadow: 0 0 10px rgba(168,140,255,0.3); }
+    }
+
+    @keyframes glowGold {
+      0% { box-shadow: 0 0 10px rgba(255,209,102,0.3); }
+      50% { box-shadow: 0 0 30px rgba(255,209,102,0.8); }
+      100% { box-shadow: 0 0 10px rgba(255,209,102,0.3); }
+    }
+
+    @keyframes glowRed {
+      0% { box-shadow: 0 0 10px rgba(255,77,77,0.3); }
+      50% { box-shadow: 0 0 30px rgba(255,77,77,0.8); }
+      100% { box-shadow: 0 0 10px rgba(255,77,77,0.3); }
+    }
+
+    @keyframes glowBlue {
+      0% { box-shadow: 0 0 10px rgba(0,229,255,0.3); }
+      50% { box-shadow: 0 0 35px rgba(0,229,255,0.9); }
+      100% { box-shadow: 0 0 10px rgba(0,229,255,0.3); }
+    }
+
+    .mythic {
+      border: 1px solid #a88cff;
+      animation: glowPurple 3s ease-in-out infinite;
+    }
+
+    .honor {
+      border: 1px solid #ffd166;
+      animation: glowGold 3s ease-in-out infinite;
+    }
+
+    .glory {
+      border: 1px solid #ff4d4d;
+      animation: glowRed 3s ease-in-out infinite;
+    }
+
+    .immortal {
+      border: 1px solid #00e5ff;
+      animation: glowBlue 3s ease-in-out infinite;
     }
 
   </style>
@@ -89,85 +133,79 @@
 
 <body>
 
-<a class="back" href="index.html">← Back to Home</a>
-
-<h1>Rank System</h1>
-
-<div class="grid">
-
-  <div class="card" onclick="showRank('Warrior')">Warrior</div>
-  <div class="card" onclick="showRank('Elite')">Elite</div>
-  <div class="card" onclick="showRank('Master')">Master</div>
-  <div class="card" onclick="showRank('Grandmaster')">Grandmaster</div>
-  <div class="card" onclick="showRank('Epic')">Epic</div>
-  <div class="card" onclick="showRank('Legend')">Legend</div>
-
-  <div class="card" onclick="showRank('Mythic')">Mythic</div>
-  <div class="card" onclick="showRank('Mythic Honor')">Mythic Honor</div>
-  <div class="card" onclick="showRank('Mythic Glory')">Mythic Glory</div>
-  <div class="card" onclick="showRank('Mythic Immortal')">Mythic Immortal</div>
-
+<div class="header">
+  <a class="btn" href="index.html">← Back to Home</a>
+  <h1>Rank System</h1>
+  <p>MLBB Competitive Progression</p>
 </div>
 
-<!-- DETAILS -->
-<div id="detail" class="detail"></div>
+<div class="section">
 
-<script>
-function showRank(rank){
-  const box = document.getElementById("detail");
-  box.style.display = "block";
+  <!-- EARLY GAME -->
+  <div class="card">
+    <img src="warrior.png" class="rank-logo">
+    <span class="tag">Early Game</span>
+    <h2>Warrior</h2>
+  </div>
 
-  let text = "";
+  <div class="card">
+    <img src="elite.png" class="rank-logo">
+    <span class="tag">Early Game</span>
+    <h2>Elite</h2>
+  </div>
 
-  switch(rank){
-    case "Warrior":
-      text = "Beginner rank. Learn basics of Mobile Legends.";
-      break;
+  <div class="card">
+    <img src="master.png" class="rank-logo">
+    <span class="tag">Early Game</span>
+    <h2>Master</h2>
+  </div>
 
-    case "Elite":
-      text = "You start facing more real players.";
-      break;
+  <!-- MID GAME -->
+  <div class="card">
+    <img src="grandmaster.png" class="rank-logo">
+    <span class="tag">Mid Game</span>
+    <h2>Grandmaster</h2>
+  </div>
 
-    case "Master":
-      text = "You understand team roles and basic strategy.";
-      break;
+  <div class="card">
+    <img src="epic.png" class="rank-logo">
+    <span class="tag">Mid Game</span>
+    <h2>Epic</h2>
+  </div>
 
-    case "Grandmaster":
-      text = "Matches become more competitive.";
-      break;
+  <!-- HIGH RANK -->
+  <div class="card">
+    <img src="legend.png" class="rank-logo">
+    <span class="tag">High Rank</span>
+    <h2>Legend</h2>
+  </div>
 
-    case "Epic":
-      text = "Draft pick starts. Strategy is important.";
-      break;
+  <!-- MYTHIC SYSTEM -->
+  <div class="card mythic">
+    <img src="mythic.png" class="rank-logo">
+    <span class="tag">Mythic</span>
+    <h2>Mythic</h2>
+  </div>
 
-    case "Legend":
-      text = "High skill players and better teamwork.";
-      break;
+  <div class="card honor mythic">
+    <img src="honor.png" class="rank-logo">
+    <span class="tag">Mythic Honor</span>
+    <h2>Mythic Honor</h2>
+  </div>
 
-    case "Mythic":
-      text = "Competitive ranked tier.";
-      box.classList.add("glow");
-      break;
+  <div class="card glory mythic">
+    <img src="glory.png" class="rank-logo">
+    <span class="tag">Mythic Glory</span>
+    <h2>Mythic Glory</h2>
+  </div>
 
-    case "Mythic Honor":
-      text = "Strong consistent Mythic players.";
-      box.classList.add("glow");
-      break;
+  <div class="card immortal mythic">
+    <img src="immortal.png" class="rank-logo">
+    <span class="tag">Mythic Immortal</span>
+    <h2>Mythic Immortal</h2>
+  </div>
 
-    case "Mythic Glory":
-      text = "Elite-level Mythic players.";
-      box.classList.add("glow");
-      break;
-
-    case "Mythic Immortal":
-      text = "Top leaderboard players.";
-      box.classList.add("glow");
-      break;
-  }
-
-  box.innerHTML = "<h2>" + rank + "</h2><p>" + text + "</p>";
-}
-</script>
+</div>
 
 </body>
 </html>
