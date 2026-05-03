@@ -114,6 +114,20 @@
   transform: scale(1.05);
 }
 
+    .layla-card {
+  border: 1px solid #ffd166;
+  box-shadow: 0 0 12px rgba(255, 209, 102, 0.6);
+  transition: 0.3s ease;
+}
+
+.layla-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow:
+    0 0 10px #ffd166,
+    0 0 25px #ffd166,
+    0 0 50px rgba(255, 209, 102, 0.7);
+  border-color: #ffffff;
+}
     /* GRID */
     .grid {
       display: grid;
@@ -231,8 +245,7 @@
 
     </div>
 
-    <div class="card">
-
+    <div class="card layla-card">
   <span class="tag">Marksman</span>
 
   <div style="overflow:hidden; border-radius:12px;">
