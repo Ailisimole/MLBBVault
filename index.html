@@ -400,13 +400,15 @@
 <div class="footer">
   Fan-made wiki for Mobile Legends: Bang Bang. Not affiliated with Moonton.
 </div>
-  <script>
+<script>
 const searchInput = document.getElementById("heroSearch");
-const cards = document.querySelectorAll(".hero-card, .layla-card, .alucard-card, .card");
+
+// ONLY hero cards
+const cards = document.querySelectorAll(".hero-card, .layla-card, .alucard-card");
 const noResults = document.getElementById("noResults");
 
 searchInput.addEventListener("input", function () {
-  const value = this.value.toLowerCase();
+  const value = this.value.toLowerCase().trim();
 
   let visibleCount = 0;
 
@@ -414,27 +416,23 @@ searchInput.addEventListener("input", function () {
     const name = (card.getAttribute("data-name") || "").toLowerCase();
     const title = card.querySelector("h3")?.innerText.toLowerCase() || "";
 
-    if (name.includes(value) || title.includes(value)) {
+    const match = name.includes(value) || title.includes(value);
+
+    if (value === "" || match) {
       card.style.display = "block";
       visibleCount++;
     } else {
       card.style.display = "none";
     }
-
-    if (value === "") {
-      card.style.display = "block";
-      visibleCount = cards.length;
-    }
   });
 
-  // Show / hide "No results"
+  // No results message
   if (visibleCount === 0 && value !== "") {
     noResults.style.display = "block";
   } else {
     noResults.style.display = "none";
   }
 });
-  </script>
-
+</script>
 </body>
 </html>
