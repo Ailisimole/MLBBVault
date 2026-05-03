@@ -268,6 +268,9 @@
 
   <div class="search">
     <input type="text" id="heroSearch" placeholder="Search heroes...">
+    <p id="noResults" style="text-align:center; display:none; color:#777; margin-top:10px;">
+  No heroes found 😢
+    </p>
   </div>
 
   <div class="grid">
@@ -400,9 +403,12 @@
   <script>
 const searchInput = document.getElementById("heroSearch");
 const cards = document.querySelectorAll(".hero-card, .layla-card, .alucard-card, .card");
+const noResults = document.getElementById("noResults");
 
 searchInput.addEventListener("input", function () {
   const value = this.value.toLowerCase();
+
+  let visibleCount = 0;
 
   cards.forEach(card => {
     const name = (card.getAttribute("data-name") || "").toLowerCase();
@@ -410,14 +416,23 @@ searchInput.addEventListener("input", function () {
 
     if (name.includes(value) || title.includes(value)) {
       card.style.display = "block";
+      visibleCount++;
     } else {
       card.style.display = "none";
     }
 
     if (value === "") {
       card.style.display = "block";
+      visibleCount = cards.length;
     }
   });
+
+  // Show / hide "No results"
+  if (visibleCount === 0 && value !== "") {
+    noResults.style.display = "block";
+  } else {
+    noResults.style.display = "none";
+  }
 });
   </script>
 
