@@ -12,20 +12,39 @@
       color: #eaeaea;
     }
 
+    /* HEADER */
     .header {
       text-align: center;
       padding: 50px 20px;
       background: linear-gradient(180deg, #141428, #0a0a0f);
     }
 
+    /* SECTION */
     .section {
       max-width: 900px;
       margin: auto;
       padding: 30px 20px;
     }
 
-    h1 {
+    h1, h2 {
       margin: 0;
+      text-align: center;
+    }
+
+    /* BACK BUTTON */
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #6c5ce7;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #7b6df0;
     }
 
     /* CARD */
@@ -44,7 +63,7 @@
       border-color: #444;
     }
 
-    /* RANK LOGO */
+    /* RANK ICON */
     .rank-logo {
       width: 90px;
       height: 90px;
@@ -64,10 +83,7 @@
       margin-bottom: 8px;
     }
 
-    /* =========================
-       ✨ GLOW ANIMATIONS
-    ==========================*/
-
+    /* GLOW ANIMATIONS */
     @keyframes glowPurple {
       0% { box-shadow: 0 0 10px rgba(168,140,255,0.3); }
       50% { box-shadow: 0 0 30px rgba(168,140,255,0.8); }
@@ -92,7 +108,6 @@
       100% { box-shadow: 0 0 10px rgba(0,229,255,0.3); }
     }
 
-    /* MYTHIC TIERS */
     .mythic {
       border: 1px solid #a88cff;
       animation: glowPurple 3s ease-in-out infinite;
@@ -119,31 +134,53 @@
 <body>
 
 <div class="header">
+  <a class="btn" href="index.html">← Back to Home</a>
   <h1>Rank System</h1>
   <p>MLBB Competitive Progression</p>
 </div>
 
 <div class="section">
 
+  <!-- EARLY GAME -->
   <div class="card">
     <img src="warrior.png" class="rank-logo">
     <span class="tag">Early Game</span>
-    <h2>Warrior - Elite - Master</h2>
+    <h2>Warrior</h2>
   </div>
 
+  <div class="card">
+    <img src="elite.png" class="rank-logo">
+    <span class="tag">Early Game</span>
+    <h2>Elite</h2>
+  </div>
+
+  <div class="card">
+    <img src="master.png" class="rank-logo">
+    <span class="tag">Early Game</span>
+    <h2>Master</h2>
+  </div>
+
+  <!-- MID GAME -->
   <div class="card">
     <img src="grandmaster.png" class="rank-logo">
     <span class="tag">Mid Game</span>
-    <h2>Grandmaster - Epic</h2>
+    <h2>Grandmaster</h2>
   </div>
 
   <div class="card">
-    <img src="legend.png" class="rank-logo">
-    <span class="tag">High Rank</span>
-    <h2>Legend - Mythic</h2>
+    <img src="epic.png" class="rank-logo">
+    <span class="tag">Mid Game</span>
+    <h2>Epic</h2>
   </div>
 
-  <!-- MYTHIC TIERS -->
+  <!-- HIGH RANK -->
+  <div class="card">
+    <img src="legend.png" class="rank-logo">
+    <span class="tag">High Rank</span>
+    <h2>Legend</h2>
+  </div>
+
+  <!-- MYTHIC SYSTEM -->
   <div class="card mythic">
     <img src="mythic.png" class="rank-logo">
     <span class="tag">Mythic</span>
