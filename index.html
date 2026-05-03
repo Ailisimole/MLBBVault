@@ -174,6 +174,63 @@
   border-color: #ffffff;
 }
 
+    #events .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #141428, #1a1a2e);
+  border: 1px solid rgba(108, 92, 231, 0.25);
+
+  box-shadow:
+    0 0 15px rgba(108, 92, 231, 0.12),
+    inset 0 0 20px rgba(255,255,255,0.02);
+
+  transition: 0.3s ease;
+}
+
+/* glow aura */
+#events .card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: rgba(108, 92, 231, 0.25);
+  filter: blur(80px);
+  top: -60px;
+  right: -60px;
+  z-index: 0;
+  animation: floatGlow 6s ease-in-out infinite;
+}
+
+/* make text stay above glow */
+#events .card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* hover magic */
+#events .card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 25px rgba(108, 92, 231, 0.35),
+    0 0 60px rgba(108, 92, 231, 0.15);
+  border-color: rgba(108, 92, 231, 0.5);
+}
+
+/* tag upgrade */
+#events .tag {
+  background: rgba(108, 92, 231, 0.15);
+  border: 1px solid rgba(108, 92, 231, 0.4);
+  color: #d7d2ff;
+  letter-spacing: 1px;
+}
+
+/* subtle text glow for title */
+#events h3 {
+  text-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+}
+
     /* GRID */
     .grid {
       display: grid;
