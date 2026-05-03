@@ -1,71 +1,174 @@
-<a href="index.html" class="btn">← Back to Home</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rank System - MLBBVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="ranks" class="section">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0f;
+      color: #eaeaea;
+    }
 
-  <h2>Rank System</h2>
+    .header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(180deg, #141428, #0a0a0f);
+    }
 
-  <div class="rank-grid">
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
 
-    <div class="rank-card">
-      <img src="warrior.png" alt="Warrior">
-      <h3>Warrior</h3>
-      <p>Entry rank. Learn basic mechanics and hero control.</p>
-    </div>
+    h1 {
+      margin: 0;
+    }
 
-    <div class="rank-card">
-      <img src="elite.png" alt="Elite">
-      <h3>Elite</h3>
-      <p>Beginner ranked gameplay with simple matchups.</p>
-    </div>
+    /* CARD */
+    .card {
+      background: #151522;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #222;
+      text-align: center;
+      transition: 0.3s ease;
+    }
 
-    <div class="rank-card">
-      <img src="master.png" alt="Master">
-      <h3>Master</h3>
-      <p>Players start learning roles and map awareness.</p>
-    </div>
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #444;
+    }
 
-    <div class="rank-card">
-      <img src="grandmaster.png" alt="Grandmaster">
-      <h3>Grandmaster</h3>
-      <p>More competitive games and basic drafting awareness.</p>
-    </div>
+    /* RANK LOGO */
+    .rank-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+      margin-bottom: 10px;
+    }
 
-    <div class="rank-card">
-      <img src="epic.png" alt="Epic">
-      <h3>Epic</h3>
-      <p>Draft pick begins. Team composition matters more.</p>
-    </div>
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #222;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
 
-    <div class="rank-card">
-      <img src="legend.png" alt="Legend">
-      <h3>Legend</h3>
-      <p>High skill matches with stronger teamwork required.</p>
-    </div>
+    /* =========================
+       ✨ GLOW ANIMATIONS
+    ==========================*/
 
-    <div class="rank-card">
-      <img src="mythic.png" alt="Mythic">
-      <h3>Mythic</h3>
-      <p>High-tier ranked gameplay with skilled players.</p>
-    </div>
+    @keyframes glowPurple {
+      0% { box-shadow: 0 0 10px rgba(168,140,255,0.3); }
+      50% { box-shadow: 0 0 30px rgba(168,140,255,0.8); }
+      100% { box-shadow: 0 0 10px rgba(168,140,255,0.3); }
+    }
 
-    <div class="rank-card">
-      <img src="honor.png" alt="Mythic Honor">
-      <h3>Mythic Honor</h3>
-      <p>Advanced competitive level with strong coordination.</p>
-    </div>
+    @keyframes glowGold {
+      0% { box-shadow: 0 0 10px rgba(255,209,102,0.3); }
+      50% { box-shadow: 0 0 30px rgba(255,209,102,0.8); }
+      100% { box-shadow: 0 0 10px rgba(255,209,102,0.3); }
+    }
 
-    <div class="rank-card">
-      <img src="glory.png" alt="Mythic Glory">
-      <h3>Mythic Glory</h3>
-      <p>Elite-level gameplay with highly skilled players.</p>
-    </div>
+    @keyframes glowRed {
+      0% { box-shadow: 0 0 10px rgba(255,77,77,0.3); }
+      50% { box-shadow: 0 0 30px rgba(255,77,77,0.8); }
+      100% { box-shadow: 0 0 10px rgba(255,77,77,0.3); }
+    }
 
-    <div class="rank-card">
-      <img src="immortal.png" alt="Mythic Immortal">
-      <h3>Mythic Immortal</h3>
-      <p>Top of the leaderboard. Absolute high-tier players.</p>
-    </div>
+    @keyframes glowBlue {
+      0% { box-shadow: 0 0 10px rgba(0,229,255,0.3); }
+      50% { box-shadow: 0 0 35px rgba(0,229,255,0.9); }
+      100% { box-shadow: 0 0 10px rgba(0,229,255,0.3); }
+    }
 
+    /* MYTHIC TIERS */
+    .mythic {
+      border: 1px solid #a88cff;
+      animation: glowPurple 3s ease-in-out infinite;
+    }
+
+    .honor {
+      border: 1px solid #ffd166;
+      animation: glowGold 3s ease-in-out infinite;
+    }
+
+    .glory {
+      border: 1px solid #ff4d4d;
+      animation: glowRed 3s ease-in-out infinite;
+    }
+
+    .immortal {
+      border: 1px solid #00e5ff;
+      animation: glowBlue 3s ease-in-out infinite;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Rank System</h1>
+  <p>MLBB Competitive Progression</p>
+</div>
+
+<div class="section">
+
+  <div class="card">
+    <img src="warrior.png" class="rank-logo">
+    <span class="tag">Early Game</span>
+    <h2>Warrior - Elite - Master</h2>
+  </div>
+
+  <div class="card">
+    <img src="grandmaster.png" class="rank-logo">
+    <span class="tag">Mid Game</span>
+    <h2>Grandmaster - Epic</h2>
+  </div>
+
+  <div class="card">
+    <img src="legend.png" class="rank-logo">
+    <span class="tag">High Rank</span>
+    <h2>Legend - Mythic</h2>
+  </div>
+
+  <!-- MYTHIC TIERS -->
+  <div class="card mythic">
+    <img src="mythic.png" class="rank-logo">
+    <span class="tag">Mythic</span>
+    <h2>Mythic</h2>
+  </div>
+
+  <div class="card honor mythic">
+    <img src="honor.png" class="rank-logo">
+    <span class="tag">Mythic Honor</span>
+    <h2>Mythic Honor</h2>
+  </div>
+
+  <div class="card glory mythic">
+    <img src="glory.png" class="rank-logo">
+    <span class="tag">Mythic Glory</span>
+    <h2>Mythic Glory</h2>
+  </div>
+
+  <div class="card immortal mythic">
+    <img src="immortal.png" class="rank-logo">
+    <span class="tag">Mythic Immortal</span>
+    <h2>Mythic Immortal</h2>
   </div>
 
 </div>
+
+</body>
+</html>
