@@ -90,16 +90,21 @@
       margin-bottom: 8px;
     }
     .miya-card {
-  border: 1px solid #3a2fff;
-  box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+.miya-card {
+  border: 1px solid #6c5ce7;
+  box-shadow: 0 0 12px rgba(108, 92, 231, 0.6);
   position: relative;
   overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .miya-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 20px rgba(108, 92, 231, 0.6);
-  border-color: #6c5ce7;
+  transform: translateY(-6px) scale(1.04);
+  box-shadow:
+    0 0 10px #6c5ce7,
+    0 0 25px #6c5ce7,
+    0 0 50px rgba(108, 92, 231, 0.6);
+  border-color: #ffffff;
 }
 
 .miya-card img {
