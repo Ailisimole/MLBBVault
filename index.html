@@ -1,105 +1,283 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MLBBVault - Diamond Giveaway & Guides</title>
-  <meta name="description" content="MLBBVault - Fan-made MLBB giveaway, guides, and tips. Join weekly diamond raffles and explore hero builds.">
+  <title>MLBBVault Wiki</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#0a0a0f;
+      color:#eaeaea;
+      line-height:1.6;
+    }
+
+    /* NAV */
+    .nav {
+      position:sticky;
+      top:0;
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      padding:14px;
+      background:rgba(20,20,32,0.95);
+      border-bottom:1px solid #222;
+      z-index:1000;
+      flex-wrap:wrap;
+    }
+
+    .nav a {
+      color:#ccc;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .nav a:hover {
+      color:white;
+    }
+
+    /* HEADER */
+    .header {
+      text-align:center;
+      padding:70px 20px;
+      background:linear-gradient(180deg,#141420,#0a0a0f);
+    }
+
+    .header h1 {
+      margin:0;
+      font-size:36px;
+      letter-spacing:1px;
+    }
+
+    .header p {
+      color:#aaa;
+      margin-top:10px;
+    }
+
+    /* SECTION */
+    .section {
+      padding:40px 20px;
+      max-width:900px;
+      margin:auto;
+    }
+
+    h2 {
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    /* WIKI CARD */
+    .card {
+      background:#151522;
+      padding:18px;
+      border-radius:14px;
+      margin-bottom:14px;
+      border:1px solid #222;
+      transition:0.2s;
+    }
+
+    .card:hover {
+      transform:translateY(-3px);
+      border-color:#333;
+    }
+
+    .tag {
+      display:inline-block;
+      font-size:12px;
+      padding:3px 8px;
+      border-radius:6px;
+      background:#222;
+      color:#aaa;
+      margin-bottom:8px;
+    }
+
+    /* HERO GRID */
+    .grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    @media(max-width:600px){
+      .grid { grid-template-columns:1fr; }
+    }
+
+    /* BUTTON */
+    .btn {
+      display:inline-block;
+      padding:10px 18px;
+      background:#6c5ce7;
+      color:white;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .btn:hover {
+      background:#7b6df0;
+    }
+
+    /* SEARCH BOX (simple fake wiki feel) */
+    .search {
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .search input {
+      width:80%;
+      max-width:400px;
+      padding:10px;
+      border-radius:10px;
+      border:none;
+      outline:none;
+      background:#141420;
+      color:white;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align:center;
+      padding:30px;
+      font-size:12px;
+      color:#777;
+    }
+  </style>
 </head>
 
-<body style="margin:0; font-family:Arial; background:#0b0b0f; color:white;">
+<body>
 
-<div style="background:#141420; padding:15px; display:flex; justify-content:center; gap:20px; position:sticky; top:0; z-index:1000;">
-
-  <a href="#home" style="color:white; text-decoration:none;">Home</a>
-  <a href="#giveaway" style="color:white; text-decoration:none;">Giveaway</a>
-  <a href="#mlbb" style="color:white; text-decoration:none;">MLBB Guides</a>
-  <a href="#winners" style="color:white; text-decoration:none;">Winners</a>
-
+<!-- NAV -->
+<div class="nav">
+  <a href="#home">Home</a>
+  <a href="#heroes">Heroes</a>
+  <a href="#ranks">Ranks</a>
+  <a href="#meta">Meta</a>
+  <a href="#giveaway">Giveaway</a>
 </div>
 
 <!-- HOME -->
-<div id="home">
-  <h1>MLBBVault</h1>
+<div id="home" class="header">
+  <h1>MLBBVault Wiki</h1>
+  <p>A simple fan-made guide hub for Mobile Legends: Bang Bang</p>
 </div>
 
 <!-- GIVEAWAY -->
-<div id="giveaway">
+<div id="giveaway" class="section">
   <h2>Giveaway</h2>
-  <button>Join Giveaway</button>
-</div>
 
-<!-- MLBB SECTION -->
-<div id="mlbb">
-  <h2>MLBB Guides</h2>
-    <hr style="margin:40px 0; border:1px solid #333;">
+  <div class="card">
+    <span class="tag">Weekly Event</span>
+    <p>We run small diamond giveaways for the community. Nothing complicated — just simple entries and random winners.</p>
 
-<h2 style="text-align:center;">🎮 MLBB Guide Section</h2>
-<p style="text-align:center; color:#aaa;">
-Tips, builds, and beginner guides for Mobile Legends players
-</p>
-
-<div style="max-width:800px; margin:auto; padding:20px;">
-
-  <div style="background:#141420; padding:15px; border-radius:10px; margin-bottom:15px;">
-    <h3>🔥 Miya Basic Guide</h3>
-    <p>Role: Marksman</p>
-    <p>Tip: Focus on farming early, join fights late game.</p>
-  </div>
-
-  <div style="background:#141420; padding:15px; border-radius:10px; margin-bottom:15px;">
-    <h3>⚔️ Beginner Jungle Tips</h3>
-    <p>Start with easy jungle heroes and always secure objectives.</p>
-  </div>
-
-  <div style="background:#141420; padding:15px; border-radius:10px;">
-    <h3>📈 Rank Push Strategy</h3>
-    <p>Play safe early, avoid unnecessary fights, focus on objectives.</p>
-  </div>
-
-</div>
-
-<!-- WINNERS -->
-<div id="winners">
-  <h2>Winners</h2>
-</div>
-
-
-  <!-- HEADER -->
-  <div style="padding:30px; text-align:center; background:#141420;">
-    <h1 style="margin:0;">💎 MLBBVault</h1>
-    <p style="color:#aaa;">Fan-made giveaways & MLBB guides</p>
-  </div>
-
-  <!-- MAIN SECTION -->
-  <div style="padding:20px; text-align:center;">
-
-    <h2>🎁 Weekly Diamond Giveaway</h2>
-    <p>2 winners every week. Simple entry system.</p>
-
-    <a href="https://forms.gle/NLg9TAuFLBSfBF4HA" style="text-decoration:none;">
-  <div style="padding:12px 25px; background:#6c5ce7; color:white; display:inline-block; border-radius:8px;">
-    Join Giveaway
-  </div>
+    <a class="btn" target="_blank" href="https://forms.gle/NLg9TAuFLBSfBF4HA">
+      Join Giveaway
     </a>
+  </div>
+</div>
 
-    <h2 style="margin-top:40px;">📘 MLBB Guides</h2>
-    <p>Learn heroes, builds, and rank strategies.</p>
+<!-- HEROES (WIKI STYLE) -->
+<div id="heroes" class="section">
 
-    <div style="margin-top:20px;">
-      <p>🔥 Miya Guide (coming soon)</p>
-      <p>⚔️ Best Jungle Heroes</p>
-      <p>📈 Rank Push Tips</p>
+  <h2>Heroes Wiki</h2>
+
+  <div class="search">
+    <input type="text" placeholder="Search heroes (visual only)">
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag">Marksman</span>
+      <h3>Miya</h3>
+      <p>
+        A scaling marksman who becomes very strong in late game.
+        She relies on positioning and timing more than early fights.
+      </p>
     </div>
 
-    <h2 style="margin-top:40px;">🏆 Winners</h2>
-    <p>No winners yet — be the first!</p>
-    
+    <div class="card">
+      <span class="tag">Marksman</span>
+      <h3>Layla</h3>
+      <p>
+        A beginner-friendly hero with long range damage.
+        Easy to learn, but needs protection from teammates.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Fighter</span>
+      <h3>Alucard</h3>
+      <p>
+        A lifesteal-based fighter who excels in duels and picking off targets.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Tank</span>
+      <h3>Tigreal</h3>
+      <p>
+        A strong initiator with crowd control skills that start team fights.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- RANKS -->
+<div id="ranks" class="section">
+
+  <h2>Rank System</h2>
+
+  <div class="card">
+    <h3>Early Game Ranks</h3>
+    <p>Warrior → Elite → Master</p>
+    <p>Focus: learning mechanics and basic map awareness.</p>
   </div>
 
-  <!-- FOOTER -->
-  <div style="padding:20px; text-align:center; font-size:12px; color:#888;">
-    Fan-made site for Mobile Legends: Bang Bang. Not affiliated with Moonton.
+  <div class="card">
+    <h3>Mid Game Ranks</h3>
+    <p>Grandmaster → Epic</p>
+    <p>Focus: drafting, teamwork, and objective control.</p>
   </div>
+
+  <div class="card">
+    <h3>High Ranks</h3>
+    <p>Legend → Mythic</p>
+    <p>Focus: strategy, macro play, and consistency.</p>
+  </div>
+
+</div>
+
+<!-- META -->
+<div id="meta" class="section">
+
+  <h2>Meta Tier List</h2>
+
+  <div class="card">
+    <span class="tag">S Tier</span>
+    <p>Currently strongest picks in the game. These heroes dominate most matches when played well.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">A Tier</span>
+    <p>Very strong and reliable heroes. Slightly situational but still top picks.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">B Tier</span>
+    <p>Balanced heroes. Require more effort or specific team setups.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Fan-made wiki for Mobile Legends: Bang Bang. Not affiliated with Moonton.
+</div>
 
 </body>
 </html>
-
